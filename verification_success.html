@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Email Verified - Get **it done</title>
+    <style>
+      /* Reset styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          sans-serif;
+        line-height: 1.6;
+        background-color: #f8f8f8;
+        color: #000;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Container */
+      .page-container {
+        max-width: 600px;
+        margin: 20px auto;
+        background-color: #ffffff;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 16px;
+        overflow: hidden;
+      }
+
+      /* Header */
+      .header {
+        background-color: #000;
+        padding: 40px 20px;
+        text-align: center;
+      }
+
+      .logo {
+        font-size: 32px;
+        font-weight: bold;
+        color: #ffffff;
+        margin-bottom: 8px;
+      }
+
+      .tagline {
+        font-size: 16px;
+        color: #ff723b;
+        font-weight: 600;
+      }
+
+      /* Content */
+      .content {
+        padding: 40px 20px;
+      }
+
+      .success-icon {
+        text-align: center;
+        margin-bottom: 24px;
+      }
+
+      .success-icon-circle {
+        width: 80px;
+        height: 80px;
+        background-color: #22c55e;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 40px;
+        color: white;
+        margin-bottom: 16px;
+      }
+
+      .success-title {
+        font-size: 28px;
+        font-weight: bold;
+        color: #000;
+        margin-bottom: 16px;
+        text-align: center;
+      }
+
+      .success-subtitle {
+        font-size: 18px;
+        color: #666;
+        margin-bottom: 32px;
+        text-align: center;
+      }
+
+      .card {
+        background-color: #ffffff;
+        border-radius: 16px;
+        padding: 24px;
+        margin-bottom: 24px;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+      }
+
+      .card-title {
+        font-size: 20px;
+        font-weight: bold;
+        color: #000;
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+      }
+
+      .card-icon {
+        width: 32px;
+        height: 32px;
+        background-color: #ff723b;
+        border-radius: 8px;
+        margin-right: 12px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+      }
+
+      .card-text {
+        font-size: 16px;
+        color: #666;
+        line-height: 1.5;
+      }
+
+      /* CTA Button */
+      .cta-container {
+        text-align: center;
+        margin: 32px 0;
+      }
+
+      .cta-button {
+        background-color: #000;
+        color: #ffffff;
+        padding: 16px 32px;
+        border-radius: 16px;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: bold;
+        display: inline-block;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        transition: all 0.3s ease;
+      }
+
+      .cta-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      }
+
+      .cta-arrow {
+        margin-left: 8px;
+        color: #ff723b;
+      }
+
+      .motivational-quote {
+        background-color: rgba(0, 0, 0, 0.02);
+        border-radius: 16px;
+        padding: 20px;
+        margin: 24px 0;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        text-align: center;
+      }
+
+      .quote-text {
+        font-size: 16px;
+        color: #000;
+        font-style: italic;
+        line-height: 1.5;
+        margin-bottom: 8px;
+      }
+
+      .quote-author {
+        font-size: 14px;
+        color: #666;
+        font-weight: bold;
+      }
+
+      /* Next steps section */
+      .next-steps {
+        background-color: #f8f8f8;
+        border-radius: 16px;
+        padding: 24px;
+        margin-top: 24px;
+      }
+
+      .next-steps-title {
+        font-size: 18px;
+        font-weight: bold;
+        color: #000;
+        margin-bottom: 16px;
+        text-align: center;
+      }
+
+      .steps-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      .step-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 12px;
+        padding: 8px 0;
+      }
+
+      .step-number {
+        width: 24px;
+        height: 24px;
+        background-color: #ff723b;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        font-weight: bold;
+        margin-right: 12px;
+        flex-shrink: 0;
+      }
+
+      .step-text {
+        font-size: 16px;
+        color: #333;
+      }
+
+      /* Footer */
+      .footer {
+        background-color: #f8f8f8;
+        padding: 32px 20px;
+        text-align: center;
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
+      }
+
+      .footer-text {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 16px;
+      }
+
+      .footer-links {
+        display: flex;
+        justify-content: center;
+        gap: 24px;
+        flex-wrap: wrap;
+      }
+
+      .footer-link {
+        color: #000;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 14px;
+      }
+
+      .footer-link:hover {
+        color: #ff723b;
+      }
+
+      /* Responsive */
+      @media (max-width: 480px) {
+        .content {
+          padding: 24px 16px;
+        }
+
+        .header {
+          padding: 24px 16px;
+        }
+
+        .success-title {
+          font-size: 24px;
+        }
+
+        .cta-button {
+          padding: 14px 24px;
+          font-size: 16px;
+        }
+
+        .footer-links {
+          flex-direction: column;
+          gap: 12px;
+        }
+
+        .page-container {
+          margin: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-container">
+      <!-- Header -->
+      <div class="header">
+      </div>
+
+      <!-- Content -->
+      <div class="content">
+        <div class="success-icon">
+          <div class="success-icon-circle">✓</div>
+        </div>
+
+        <h1 class="success-title">Email Verified Successfully!</h1>
+        <p class="success-subtitle">
+          Your account is now active and ready to go.
+        </p>
+
+        <div class="card">
+          <h2 class="card-title">
+            <span class="card-icon">🎉</span>
+            You're All Set!
+          </h2>
+          <p class="card-text">
+            Your email has been verified and your account is now fully activated.
+          </p>
+        </div>
+
+        <div class="cta-container">
+          <span class="cta-button">
+            Go back to app
+            <span class="cta-arrow">→</span>
+          </span>
+        </div>
+
+        <div class="next-steps">
+          <h3 class="next-steps-title">What's Next?</h3>
+          <ul class="steps-list">
+            <li class="step-item">
+              <div class="step-number">1</div>
+              <div class="step-text">Complete your profile setup</div>
+            </li>
+            <li class="step-item">
+              <div class="step-number">2</div>
+              <div class="step-text">Set your first goal</div>
+            </li>
+            <li class="step-item">
+              <div class="step-number">3</div>
+              <div class="step-text">Find accountability partners</div>
+            </li>
+            <li class="step-item">
+              <div class="step-number">4</div>
+              <div class="step-text">Start tracking your progress</div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="motivational-quote">
+          <p class="quote-text">
+            "The way to get started is to quit talking and begin doing."
+          </p>
+          <p class="quote-author">- Walt Disney</p>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="footer">
+      </div>
+    </div>
+  </body>
+</html>
